@@ -1,0 +1,64 @@
+{
+  "plugin": {
+    "name": "Remote VS Code",
+    "description": "Seamlessly open a web-based VS Code workspace on any saved SSH host."
+  },
+  "tab": {
+    "title": "VS Code",
+    "noHost": "Open VS Code from a host.",
+    "launching": "Opening remote VS Code workspace...",
+    "launchingDetail": "Connecting the SSH tunnel and waiting for code-server",
+    "notInstalled": "code-server is not installed on this host",
+    "notInstalledDetail": "Install it on the host, or set its path in the host's VS Code settings.",
+    "error": "Could not start VS Code",
+    "retry": "Retry",
+    "choose": "Choose a workspace",
+    "chooseDetail": "Pick one of this host's workspaces, a recent one, or type a path.",
+    "pathLabel": "Folder or .code-workspace file on the host",
+    "pathPlaceholder": "~/projects/app",
+    "open": "Open",
+    "recent": "Recent",
+    "named": "Workspaces",
+    "opening": "Opening {{path}}",
+    "missing": "That path does not exist on the host",
+    "missingDetail": "{{path}} was not found. Pick another or fix the path.",
+    "tooMany": "Too many open VS Code sessions",
+    "tooManyDetail": "Close one of your VS Code tabs and try again.",
+    "unsupportedDetail": "{{path}} is a file. Open a folder or a .code-workspace file instead.",
+    "installCommand": "curl -fsSL https://code-server.dev/install.sh | sh"
+  },
+  "action": {
+    "open": "Open in VS Code",
+    "other": "Other path…",
+    "last": "Last used"
+  },
+  "permissions": {
+    "use": {
+      "title": "Use VS Code sessions",
+      "description": "Start code-server sessions on hosts the user can connect to."
+    }
+  },
+  "settings": {
+    "vscodePath": {
+      "label": "code-server path",
+      "description": "Absolute path to code-server on the host. Empty detects it on PATH."
+    },
+    "defaultWorkspace": {
+      "label": "Default workspace",
+      "description": "Directory opened when VS Code starts, such as ~/projects or /var/www."
+    },
+    "workspaces": {
+      "label": "Workspaces",
+      "description": "Folders or .code-workspace files to open, one per line as Name = path. A line with only a path uses its last segment as the name. Lines starting with # are ignored.",
+      "placeholder": "API = ~/work/api\nInfra = ~/work/infra/infra.code-workspace"
+    },
+    "recentWorkspaces": {
+      "label": "Recent workspaces"
+    }
+  },
+  "palette": {
+    "group": "VS Code workspaces",
+    "openAtPath": "Open VS Code at a path…",
+    "workspaceOn": "{{workspace}} on {{host}}"
+  }
+}

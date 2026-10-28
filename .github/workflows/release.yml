@@ -27,6 +27,9 @@ on:
 
 permissions:
   contents: write
+  # Build provenance, which is what the community registry checks instead of a signature.
+  id-token: write
+  attestations: write
 
 jobs:
   release:

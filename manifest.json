@@ -1,0 +1,88 @@
+{
+  "id": "termix-vscode",
+  "name": "Remote VS Code",
+  "version": "1.1.0",
+  "description": "Seamlessly open a web-based VS Code workspace on any saved SSH host.",
+  "author": {
+    "name": "Tech-Innovators-Dev",
+    "url": "https://github.com/Tech-Innovators-Dev"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Tech-Innovators-Dev/termix-vscode",
+  "docs": "https://github.com/Tech-Innovators-Dev/termix-vscode/tree/main/docs",
+  "category": "Productivity",
+  "icon": "Code2",
+  "features": [
+    "Opens code-server on a host over the saved SSH connection",
+    "Nothing listens on the Termix server: the tunnel is an SSH channel",
+    "Per-host code-server path and default workspace"
+  ],
+  "engine": {
+    "termix": ">=26.10.2",
+    "api": "^1.3"
+  },
+  "capabilities": [
+    "ssh:connect",
+    "credentials:use",
+    "network:serve",
+    "ui:surface"
+  ],
+  "env": [],
+  "contributes": {
+    "tabs": [
+      {
+        "id": "vscode-session",
+        "titleKey": "tab.title",
+        "icon": "Code2",
+        "openFrom": ["host-context-menu", "palette"]
+      }
+    ],
+    "permissions": [
+      {
+        "name": "use",
+        "titleKey": "permissions.use.title",
+        "descriptionKey": "permissions.use.description",
+        "defaultRoles": ["admin", "user"]
+      }
+    ],
+    "settings": {
+      "host": {
+        "fields": [
+          {
+            "key": "vscodePath",
+            "type": "string",
+            "labelKey": "settings.vscodePath.label",
+            "descriptionKey": "settings.vscodePath.description",
+            "default": ""
+          },
+          {
+            "key": "defaultWorkspace",
+            "type": "string",
+            "labelKey": "settings.defaultWorkspace.label",
+            "descriptionKey": "settings.defaultWorkspace.description",
+            "default": "~"
+          },
+          {
+            "key": "workspaces",
+            "type": "textarea",
+            "labelKey": "settings.workspaces.label",
+            "descriptionKey": "settings.workspaces.description",
+            "placeholderKey": "settings.workspaces.placeholder",
+            "default": ""
+          }
+        ]
+      },
+      "user": [
+        {
+          "key": "recentWorkspaces",
+          "type": "json",
+          "labelKey": "settings.recentWorkspaces.label",
+          "hidden": true,
+          "default": {}
+        }
+      ]
+    }
+  },
+  "locales": "locales",
+  "platforms": ["linux", "win32", "darwin"]
+}
