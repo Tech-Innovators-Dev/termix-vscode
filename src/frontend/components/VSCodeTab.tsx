@@ -138,9 +138,14 @@ export function VSCodeTab({ tab, host, isVisible }: TabProps) {
         <p className="max-w-md text-xs text-muted-foreground">
           {t("tab.notInstalledDetail")}
         </p>
-        <code className="border border-border px-2 py-1 text-xs">
-          {t("tab.installCommand")}
-        </code>
+        <a
+          className="text-xs text-accent-brand underline"
+          href="https://coder.com/docs/code-server/install"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          {t("tab.installGuide")}
+        </a>
         <button
           type="button"
           className="border border-border px-3 py-1 text-xs"

@@ -25,7 +25,7 @@
     "tooMany": "Too many open VS Code sessions",
     "tooManyDetail": "Close one of your VS Code tabs and try again.",
     "unsupportedDetail": "{{path}} is a file. Open a folder or a .code-workspace file instead.",
-    "installCommand": "curl -fsSL https://code-server.dev/install.sh | sh"
+    "installGuide": "How to install code-server"
   },
   "action": {
     "open": "Open in VS Code",

@@ -1,6 +1,6 @@
 {
   "name": "termix-vscode",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Integrated Remote VS Code session launcher for Termix SSH",
   "type": "module",
   "main": "dist/backend/index.js",

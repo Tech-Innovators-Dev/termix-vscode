@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1
+
+### Changed
+
+- The "code-server is not installed" screen links to the install guide instead of showing an install command.
+
 ## 1.1.0
 
 ### Added

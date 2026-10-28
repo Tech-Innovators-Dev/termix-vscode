@@ -375,6 +375,13 @@ describe("the rest of the tab", () => {
     const { app } = await render(api);
     open(app, { workspacePath: "~" });
     expect(await screen.findByText(locales.tab.notInstalled)).toBeTruthy();
+    // A link to the guide, and no command to paste into a shell.
+    const guide = screen.getByRole("link", { name: locales.tab.installGuide });
+    expect(guide.getAttribute("href")).toBe(
+      "https://coder.com/docs/code-server/install",
+    );
+    expect(guide.getAttribute("rel")).toContain("noopener");
+    expect(document.body.textContent).not.toMatch(/curl|\| sh/);
     fireEvent.click(screen.getByRole("button", { name: locales.tab.retry }));
     await screen.findByTitle(locales.tab.title);
     expect(starts(api)).toHaveLength(2);
