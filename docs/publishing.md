@@ -10,7 +10,8 @@ For maintainers. Nothing here is automated; each step publishes something under 
 3. Create the branch `dev-X.Y.Z` for the version in `manifest.json`, `package.json` and the newest `CHANGELOG.md`
    section. The CI workflow must pass.
 4. Run the **Release** workflow by hand from that branch with `stable` and `dry-run` first, then `release`. No secrets
-   are needed: it records build provenance. The run summary shows the version and sha256 to submit.
+   are needed: it records build provenance, which needs `id-token: write` and `attestations: write` in
+   `.github/workflows/release.yml`. The run summary shows the version and sha256 to submit.
 5. Fork [Termix-SSH/Termix-Registry](https://github.com/Termix-SSH/Termix-Registry) and add
    `community/plugins/termix-vscode.json`:
 
